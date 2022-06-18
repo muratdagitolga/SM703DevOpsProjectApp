@@ -8,7 +8,7 @@ pipeline {
 
                 git branch: 'development', url: 'https://github.com/muratdagitolga/SM703DevOpsProjectApp.git'
 
-                echo "jenkins git çekildi. Stage: Preprod"
+                echo "jenkins git çekildi. Stage: development"
 
                 sh "ls -lat"
             }
