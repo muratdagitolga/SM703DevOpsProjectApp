@@ -5,6 +5,7 @@ public class Main {
 
         SimpleAddition s1 = new SimpleAddition();
         int result = s1.sumOfTwoIntegers();
+        System.out.println("OK");
 
     }
 }
