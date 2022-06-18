@@ -26,8 +26,7 @@ pipeline {
 
         stage('Java Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
-
+                sh 'mvn -B clean verify'
                 sh "ls -lat"
                 echo "dosya başarılı şekilde build edildi"
             }
@@ -35,8 +34,7 @@ pipeline {
 
         stage('Java Run') {
             steps {
-                sh 'java Main'
-
+                sh 'mvn compile exec:java -Dexec.mainClass="org.devopsexample.main.Main"'
                 echo "başarılı"
             }
         }
