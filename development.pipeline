@@ -34,7 +34,7 @@ pipeline {
 
         stage('Java Run') {
             steps {
-                sh 'mvn -jar target/mvn-DevOpsProjectApp-1.0-SNAPSHOT.jar'
+                sh 'java -jar target/mvn-DevOpsProjectApp-1.0-SNAPSHOT.jar'
                 echo "başarılı"
             }
         }
