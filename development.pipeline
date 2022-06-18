@@ -34,7 +34,7 @@ pipeline {
 
         stage('Java Run') {
             steps {
-                sh 'mvn compile exec:java -Dexec.mainClass="org.devopsexample.main.Main"'
+                sh 'mvn -jar target/mvn-DevOpsProjectApp-1.0-SNAPSHOT.jar'
                 echo "başarılı"
             }
         }
