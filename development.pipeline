@@ -24,7 +24,7 @@ pipeline {
 
         stage('Java Build') {
             steps {
-                sh 'javac Main.java'
+                sh 'javac /src/main/java/org/devopsexample/Main.java'
 
                 sh "ls -lat"
                 echo "dosya başarılı şekilde build edildi"
