@@ -35,6 +35,8 @@ pipeline {
         stage('Java Run') {
             steps {
                 sh 'java src/main/java/org/devopsexample/Main.java'
+                sh 'java src/main/java/org/devopsexample/SimpleAddition.java'
+
                 echo "başarılı"
             }
         }
