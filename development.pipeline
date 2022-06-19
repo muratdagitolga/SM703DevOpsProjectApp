@@ -26,7 +26,7 @@ pipeline {
 
         stage('Java Build') {
             steps {
-                sh 'mvn -B clean verify'
+                sh 'mvn -B clean install'
                 sh "ls -lat"
                 echo "dosya başarılı şekilde build edildi"
             }
@@ -42,11 +42,16 @@ pipeline {
         }
          stage('Java Test') {
             steps {
-                sh 'java SimpleAdditionTest'
+                sh './mvnw test'
 
                 echo "başarılı"
             }
-        }       
+            post {
+                always {
+                     junit '**/target/surefire-reports/TEST-*.xml'
+                }
+
+            }
     }
 
     post {
