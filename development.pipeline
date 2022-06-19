@@ -35,23 +35,15 @@ pipeline {
         stage('Java Run') {
             steps {
                 sh 'java -jar DevOpsProjectApp.jar'
-
                 echo "başarılı"
             }
         }
          stage('Java Test') {
             steps {
                 sh './mvnw test'
-
                 echo "başarılı"
             }
-            post {
-                always {
-                     junit '**/target/surefire-reports/TEST-*.xml'
-                }
-
-            }
-    }
+         }
 
     post {
                  always {
@@ -71,5 +63,6 @@ pipeline {
                      echo 'This will run only if the state of the Pipeline has changed'
                      echo 'For example, if the Pipeline was previously failing but is now successful'
                  }
-             }
+          }
+}
 }
