@@ -35,7 +35,7 @@ pipeline {
         stage('Java Run') {
             steps {
                 script {
-                    if (fileExists('/rc/main/java/org/devopsexample/Main.java') {
+                    if (fileExists('src/main/java/org/devopsexample/Main.java')) {
                         echo "File found!"
                     }
                 }
