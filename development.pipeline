@@ -35,13 +35,8 @@ pipeline {
         stage('Java Run') {
             steps {
                 script {
-                    if (fileExists('src/main/java/org/devopsexample/Main.java')) {
+                    if (fileExists('out/artifacts/DevOpsProjectApp_jar')) {
                         echo "File found!"
-                    }
-                    dir('src/main/java/org/devopsexample') {
-                        sh "pwd"
-                        sh 'javac Main.java'
-                        echo "dosya başarılı şekilde build edildi"
                     }
                 }
 
