@@ -41,6 +41,8 @@ pipeline {
                     dir('out/artifacts') {
                         sh "pwd"
                     }
+                    sh 'java -jar DevOpsProjectApp.jar'
+                    echo "sonunda"
                 }
 
             }
