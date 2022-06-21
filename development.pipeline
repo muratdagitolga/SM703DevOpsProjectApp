@@ -38,18 +38,23 @@ pipeline {
                     if (fileExists('out/artifacts/DevOpsProjectApp_jar')) {
                         echo "File found!"
                     }
-                    dir('out/artifacts') {
+                    dir('out/artifacts/DevOpsProjectApp_jar') {
+                        sh 'java -jar DevOpsProjectApp.jar'
                         sh "pwd"
                     }
-                    sh 'java -jar DevOpsProjectApp.jar'
-                    echo "sonunda"
                 }
-
             }
         }
          stage('Java Test') {
             steps {
-                echo "başarılı"
+                script {
+                    if (fileExists('src/test/java/org/devopsexample/SimpleAdditionTest.java')) {
+                        echo "File found!"
+                    }
+                    dir('src/test/java/org/devopsexample') {
+                        sh "pwd"
+                    }
+                }
             }
          }
 }
