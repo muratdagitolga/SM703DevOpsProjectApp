@@ -34,7 +34,7 @@ pipeline {
 
         stage('Java Run') {
             steps {
-                sh 'java -jar DevOpsProjectApp.jar'
+                sh 'pwd'
                 echo "başarılı"
             }
         }
