@@ -7,28 +7,22 @@ pipeline {
 
         stage('Clone repository') {
             steps {
-
                 git branch: 'development', url: 'https://github.com/muratdagitolga/SM703DevOpsProjectApp.git'
-
-                echo "jenkins git çekildi. Stage: development"
-
-                sh "ls -lat"
+                echo "The code is pulled from Development branch'"
             }
         }
 
         stage('Java Version Test') {
             steps {
                 sh 'java -version'
-
-                sh "ls -lat"
             }
         }
 
         stage('Java Build') {
             steps {
-                sh 'mvn -B clean install'
-                sh "ls -lat"
-                echo "dosya başarılı şekilde build edildi"
+                sh './mvnw clean compile'
+                sh 'sleep 5'
+                echo "Project is compiled successfully..."
             }
         }
 
@@ -36,7 +30,9 @@ pipeline {
             steps {
                 script {
                     if (fileExists('out/artifacts/DevOpsProjectApp_jar')) {
-                        echo "File found!"
+                        echo "Searching..."
+                        sh 'sleep 5'
+                        echo "The executable jar file is found!"
                     }
                     dir('out/artifacts/DevOpsProjectApp_jar') {
                         sh 'java -jar DevOpsProjectApp.jar'
@@ -54,6 +50,10 @@ pipeline {
                     dir('src/test/java/org/devopsexample') {
                         sh "pwd"
                     }
+                }
+                sh './mvnw test'
+                post {
+                    always {}
                 }
             }
          }
