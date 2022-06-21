@@ -38,7 +38,13 @@ pipeline {
                     if (fileExists('src/main/java/org/devopsexample/Main.java')) {
                         echo "File found!"
                     }
+                    dir('src/main/java/org/devopsexample') {
+                        sh "pwd"
+                        sh 'javac Main.java'
+                        echo "dosya başarılı şekilde build edildi"
+                    }
                 }
+
             }
         }
          stage('Java Test') {
