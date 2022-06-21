@@ -34,13 +34,15 @@ pipeline {
 
         stage('Java Run') {
             steps {
-                sh 'pwd'
-                echo "başarılı"
+                script {
+                    if (fileExists('/rc/main/java/org/devopsexample/Main.java') {
+                        echo "File found!"
+                    }
+                }
             }
         }
          stage('Java Test') {
             steps {
-                sh './mvnw test'
                 echo "başarılı"
             }
          }
