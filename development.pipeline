@@ -38,6 +38,9 @@ pipeline {
                     if (fileExists('out/artifacts/DevOpsProjectApp_jar')) {
                         echo "File found!"
                     }
+                    dir('out/artifacts') {
+                        sh "pwd"
+                    }
                 }
 
             }
