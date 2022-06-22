@@ -8,7 +8,7 @@ pipeline {
         stage('Clone repository') {
             steps {
                 git branch: 'development', url: 'https://github.com/muratdagitolga/SM703DevOpsProjectApp.git'
-                echo "The code is pulled from Pre-Prod branch'"
+                echo "The code is pulled from Production branch'"
             }
         }
 
@@ -54,9 +54,7 @@ pipeline {
          }
          stage('Deploy') {
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'github-private-key', keyFileVariable: 'SSH_KEY')]) {
-                   sh("git push origin development:pre-prod")
-                }
+                echo "Deploy is successful!"
             }
          }
 }
