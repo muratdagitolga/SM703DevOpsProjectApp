@@ -55,6 +55,9 @@ pipeline {
 
          stage('Deploy to Pre-Prod Branch') {
             steps {
+               withCredentials([sshUserPrivateKey(credentialsId: 'new_github', keyFileVariable: 'nos4gi956s2/3n36mCkw4UZLWTBnHTi8bLqmwcGDNsg')]) {
+               sh("git push branch: 'development', url: 'https://github.com/muratdagitolga/SM703DevOpsProjectApp.git':branch: 'pre-prod', url: 'https://github.com/muratdagitolga/SM703DevOpsProjectApp.git'")
+            }
                echo "Deploy is successful!"
             }
          }
