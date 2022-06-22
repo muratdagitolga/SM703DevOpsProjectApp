@@ -35,7 +35,6 @@ pipeline {
                     }
                     dir('out/artifacts/DevOpsProjectApp_jar') {
                         sh 'java -jar DevOpsProjectApp.jar'
-                        sh "pwd"
                     }
                 }
             }
@@ -52,7 +51,7 @@ pipeline {
                 }
             }
          }
-         stage('Deploy') {
+         stage('Deploy to Release Branch') {
             steps {
                    echo "Deploy is successful!"
             }
