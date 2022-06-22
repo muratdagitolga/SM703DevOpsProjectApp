@@ -46,7 +46,7 @@ pipeline {
                 }
             }
         }
-         stage('Sonar And Test') {
+         stage('Test') {
             steps {
                 script {
                     if (fileExists('src/test/java/org/devopsexample/SimpleAdditionTest.java')) {
