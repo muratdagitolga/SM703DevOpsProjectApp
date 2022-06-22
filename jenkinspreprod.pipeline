@@ -35,11 +35,11 @@ pipeline {
                     }
                     dir('out/artifacts/DevOpsProjectApp_jar') {
                         sh 'java -jar DevOpsProjectApp.jar'
-                        sh "pwd"
                     }
                 }
             }
         }
+
          stage('Sonar And Test') {
             steps {
                 script {
@@ -52,14 +52,14 @@ pipeline {
                 }
             }
          }
-         stage('Deploy') {
+
+         stage('Deploy to Release Branch') {
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'github-private-key', keyFileVariable: 'SSH_KEY')]) {
-                   sh("git push origin pre-prod:release")
-                }
+                   echo "Deploy is successful!"
             }
          }
 }
+
     post {
                  always {
                      echo 'This will always run'
@@ -78,6 +78,5 @@ pipeline {
                      echo 'This will run only if the state of the Pipeline has changed'
                      echo 'For example, if the Pipeline was previously failing but is now successful'
                  }
-          }
-
+    }
 }
