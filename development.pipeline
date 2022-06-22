@@ -20,7 +20,8 @@ pipeline {
 
         stage('Java Build') {
             steps {
-                sh './mvnw clean compile'
+                sh 'mvn clean install'
+                sh 'mvn clean compile'
                 echo "Project is compiled successfully..."
             }
         }
