@@ -8,7 +8,7 @@ class SimpleAdditionTest {
 
     @Test
     void sumOfTwoIntegers() {
-        var simple1 = new SimpleAddition();
+        SimpleAddition simple1 = new SimpleAddition();
         assertTrue(simple1.sumOfTwoIntegers() > 0);
     }
 }
