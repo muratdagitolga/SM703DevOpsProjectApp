@@ -55,7 +55,7 @@ pipeline {
 
          stage('Deploy to Release Branch') {
             steps {
-                   echo "Deploy is successful!"
+                   echo "Deploy is successfulTOLGA!"
             }
          }
 }
