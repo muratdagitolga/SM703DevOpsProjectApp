@@ -56,7 +56,7 @@ pipeline {
          stage('Deploy to Pre-Prod Branch') {
             steps {
                withCredentials([sshUserPrivateKey(credentialsId: 'github-private-key', keyFileVariable: 'nos4gi956s2/3n36mCkw4UZLWTBnHTi8bLqmwcGDNsg')]) {
-               sh("git push origin <local-branch>:<remote-branch>")
+               sh("git push origin development:pre-prod")
             }
                echo "Deploy is successful!"
             }
