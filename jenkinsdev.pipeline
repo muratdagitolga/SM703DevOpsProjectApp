@@ -54,6 +54,7 @@ pipeline {
          }
 
          stage('Deploy to Pre-Prod Branch') {
+            steps {
                echo "Deploy is successful!"
             }
          }
