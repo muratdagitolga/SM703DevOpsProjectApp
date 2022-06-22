@@ -8,7 +8,7 @@ pipeline {
         stage('Clone repository') {
             steps {
                 git branch: 'development', url: 'https://github.com/muratdagitolga/SM703DevOpsProjectApp.git'
-                echo "The code is pulled from Development branch'"
+                echo "The code is pulled from Pre-Prod branch'"
             }
         }
 
