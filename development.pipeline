@@ -21,7 +21,6 @@ pipeline {
         stage('Java Build') {
             steps {
                 sh './mvnw clean compile'
-                sh 'sleep 5'
                 echo "Project is compiled successfully..."
             }
         }
@@ -31,7 +30,6 @@ pipeline {
                 script {
                     if (fileExists('out/artifacts/DevOpsProjectApp_jar')) {
                         echo "Searching..."
-                        sh 'sleep 5'
                         echo "The executable jar file is found!"
                     }
                     dir('out/artifacts/DevOpsProjectApp_jar') {
@@ -51,7 +49,7 @@ pipeline {
                         sh "pwd"
                     }
                 }
-                sh './mvnw test'
+                sh 'java SimpleAdditionTest.java'
                 post {
                     always {}
                 }
