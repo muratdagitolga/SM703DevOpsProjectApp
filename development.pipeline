@@ -52,6 +52,13 @@ pipeline {
                 }
             }
          }
+         stage('Scan') {
+            steps {
+                withSonarQubeEnv(installationName: 'sonarqube') {
+                    sh'./mvnw clean org.sonarcource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+                }
+            }
+         }
 }
     post {
                  always {
