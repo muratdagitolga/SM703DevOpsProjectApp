@@ -55,7 +55,7 @@ pipeline {
          stage('Deploy') {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'github-private-key', keyFileVariable: 'SSH_KEY')]) {
-                   sh("git push origin development:pre-prod")
+                   sh("git push origin pre-prod:release")
                 }
             }
          }
