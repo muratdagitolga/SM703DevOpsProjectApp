@@ -23,6 +23,7 @@ pipeline {
                 sh 'mvn clean install'
                 sh 'mvn clean compile'
                 echo "Project is compiled successfully..."
+                withSonarQubeEnv(credentialsId: 'f287fc60eb1ae82bf2a98e46f7e7636e9e486dac', installationName: 'sonarqube')
             }
         }
 
