@@ -46,7 +46,7 @@ pipeline {
                         echo "File found!"
                     }
                     dir('src/test/java/org/devopsexample') {
-                        sh "java SimpleAdditionTest"
+                        sh "java SimpleAdditionTest.java"
                     }
                 }
             }
