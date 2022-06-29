@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SimpleAdditionTest {
 
     @Test
-    void sumOfTwoIntegers() {
+    void testSumOfTwoIntegers() {
         SimpleAddition simple1 = new SimpleAddition();
         assertTrue(simple1.sumOfTwoIntegers() > 0);
     }

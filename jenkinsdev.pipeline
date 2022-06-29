@@ -20,8 +20,8 @@ pipeline {
 
         stage('Build and Sonar Test') {
             steps {
-                sh './mvnw clean install'
-                sh './mvnw clean compile'
+                sh 'mvn clean install'
+                sh 'mvn clean compile'
                 echo "Project is compiled successfully..."
             }
         }
