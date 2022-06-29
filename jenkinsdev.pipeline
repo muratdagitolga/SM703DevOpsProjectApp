@@ -35,7 +35,6 @@ pipeline {
                     }
                     dir('out/artifacts/DevOpsProjectApp_jar') {
                         sh 'java -jar DevOpsProjectApp.jar'
-                        sh "pwd"
                     }
                 }
             }
@@ -47,7 +46,7 @@ pipeline {
                         echo "File found!"
                     }
                     dir('src/test/java/org/devopsexample') {
-                        sh "pwd"
+                        sh "java SimpleAdditionTest"
                     }
                 }
             }
