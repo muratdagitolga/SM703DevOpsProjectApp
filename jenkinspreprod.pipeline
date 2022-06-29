@@ -53,7 +53,7 @@ pipeline {
          }
          stage('Deploy to Release Branch') {
             steps {
-                   echo "Deploy is successful!"
+                   echo "Deploy to release branch is successful!"
             }
          }
 }
